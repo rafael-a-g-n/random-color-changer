@@ -4,7 +4,7 @@ const colorSpan = document.querySelector(".color");
 function setColor(color) {
   document.body.style.backgroundColor = color;
   colorSpan.textContent = color;
-  localStorage.setItem("lastColor", color); // Save to local storage
+  localStorage.setItem("lastColorHex", color); // Save to local storage
 }
 
 btn.addEventListener("click", () => {
@@ -14,7 +14,7 @@ btn.addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
-  const lastColor = localStorage.getItem("lastColor");
+  const lastColor = localStorage.getItem("lastColorHex");
   if (lastColor) {
     setColor(lastColor);
   }
