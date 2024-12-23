@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-/* Root Variables */
 :root {
   --clr-primary: hsl(340, 82%, 52%);
   --clr-secondary: hsl(220, 82%, 52%);
@@ -32,7 +31,6 @@ body {
   transition: background 0.5s ease;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -56,25 +54,6 @@ h4 {
   font-size: 0.875rem;
 }
 
-@media screen and (min-width: 800px) {
-  h1 {
-    font-size: 4rem;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-  h4 {
-    font-size: 1rem;
-  }
-  body {
-    font-size: 1rem;
-  }
-}
-
-/* Navigation */
 nav {
   background: var(--clr-text);
   height: 4rem;
@@ -237,5 +216,76 @@ main {
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav {
+    padding: 0 1rem;
+    height: auto;
+    min-height: 4rem;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .nav-center h4 {
+    margin-bottom: 1rem;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+
+  .btn-hero {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  nav {
+    padding: 0 1.5rem;
+  }
+
+  .container {
+    max-width: 95%;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    max-width: 80%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
   }
 }
