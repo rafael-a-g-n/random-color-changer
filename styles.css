@@ -15,8 +15,6 @@
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* Global Styles */
 *,
 ::after,
 ::before {
@@ -155,7 +153,6 @@ nav a.active {
   font-weight: 800;
 }
 
-/* Main Content */
 main {
   min-height: calc(100vh - 3rem);
   display: grid;
@@ -181,7 +178,6 @@ main {
   color: var(--clr-primary);
 }
 
-/* Button */
 .btn-hero {
   font-family: var(--ff-primary);
   text-transform: uppercase;
@@ -205,7 +201,6 @@ main {
   background: var(--clr-text);
 }
 
-/* Animations */
 @keyframes navSlide {
   from {
     transform: translateY(-100%);

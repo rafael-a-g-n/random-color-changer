@@ -58,8 +58,21 @@ const colors = [
 const btn = document.getElementById("btn");
 const colorSpan = document.querySelector(".color");
 
+function setColor(color) {
+  document.body.style.backgroundColor = color;
+  colorSpan.textContent = color;
+  localStorage.setItem("lastColor", color);
+}
+
 btn.addEventListener("click", function () {
   const randomNumber = Math.floor(Math.random() * colors.length);
-  document.body.style.backgroundColor = colors[randomNumber];
-  colorSpan.textContent = colors[randomNumber];
+  const selectedColor = colors[randomNumber];
+  setColor(selectedColor);
+});
+
+window.addEventListener("load", () => {
+  const lastColor = localStorage.getItem("lastColor");
+  if (lastColor) {
+    setColor(lastColor);
+  }
 });
