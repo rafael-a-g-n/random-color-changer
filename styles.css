@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
+/* Root Variables */
 :root {
-  --clr-primary: hsl(340, 82%, 52%); /* Vibrant pink */
-  --clr-secondary: hsl(220, 82%, 52%); /* Bright blue */
+  --clr-primary: hsl(340, 82%, 52%);
+  --clr-secondary: hsl(220, 82%, 52%);
   --clr-background: hsl(210, 36%, 96%);
-  --clr-text: hsl(209, 61%, 16%);
-  --clr-accent: hsl(45, 100%, 51%); /* Bright yellow */
+  --clr-text: hsl(210, 22%, 20%);
+  --clr-accent: hsl(45, 100%, 51%);
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s ease-in-out;
@@ -15,6 +16,7 @@
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Global Styles */
 *,
 ::after,
 ::before {
@@ -32,6 +34,7 @@ body {
   transition: background 0.5s ease;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
@@ -45,15 +48,12 @@ h4 {
 h1 {
   font-size: 3rem;
 }
-
 h2 {
   font-size: 2rem;
 }
-
 h3 {
   font-size: 1.25rem;
 }
-
 h4 {
   font-size: 0.875rem;
 }
@@ -76,18 +76,20 @@ h4 {
   }
 }
 
+/* Navigation */
 nav {
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+  background: var(--clr-text);
   height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  box-shadow: var(--shadow-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   position: sticky;
   top: 0;
   z-index: 1000;
+  animation: navSlide 0.5s ease-out;
 }
 
 .nav-center {
@@ -118,7 +120,7 @@ nav {
 
 nav a {
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
   color: var(--clr-background);
   letter-spacing: var(--spacing);
@@ -128,8 +130,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--clr-accent);
-  transform: scale(1.1) rotate(5deg); /* Adds a slight rotation on hover */
+  color: var(--clr-primary);
+  transform: scale(1.1) rotate(5deg);
 }
 
 nav a::after {
@@ -137,7 +139,7 @@ nav a::after {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: var(--clr-accent);
+  background: var(--clr-primary);
   left: 0;
   bottom: -5px;
   transform: scaleX(0);
@@ -148,19 +150,12 @@ nav a:hover::after {
   transform: scaleX(1);
 }
 
-@keyframes navSlide {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+nav a.active {
+  color: var(--clr-primary);
+  font-weight: 800;
 }
 
-nav {
-  animation: navSlide 0.5s ease-out;
-}
-
+/* Main Content */
 main {
   min-height: calc(100vh - 3rem);
   display: grid;
@@ -186,6 +181,7 @@ main {
   color: var(--clr-primary);
 }
 
+/* Button */
 .btn-hero {
   font-family: var(--ff-primary);
   text-transform: uppercase;
@@ -207,6 +203,16 @@ main {
 .btn-hero:hover {
   color: var(--clr-background);
   background: var(--clr-text);
+}
+
+/* Animations */
+@keyframes navSlide {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
